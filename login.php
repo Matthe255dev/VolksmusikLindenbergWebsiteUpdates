@@ -17,6 +17,7 @@
         if($rowc >= 0){
             $entry = $stmt->fetch();
             if(password_verify($_POST["passwd"], $row["Password"])){//check the Password
+                echo "Login erfolgreich";
                 $instrument = $mysql->prepare("SELECT Instrument FROM 'Login' WHERE Username = :user");
                 $instrument->bindParam(":user", $_POST["username"]);
                 $instrument->execute();
@@ -25,7 +26,7 @@
                 header("Location: $instrument");
             }
         }else{
-            window.alert("This User doesn't Exist!");
+            echo "This User doesn't Exist!";
         }
     }
 ?>
