@@ -20,8 +20,8 @@
                 $instrument = $mysql->prepare("SELECT Instrument FROM 'Login' WHERE Username = :user");
                 $instrument->bindParam(":user", $_POST["username"]);
                 $instrument->execute();
-                session_start();                                //start the session
-                $_SESSION["username"] = $row["USERNAME"];       
+                //session_start();                                //start the session
+                //$_SESSION["username"] = $row["USERNAME"];       
                 header("Location: /Noten/$instrument");
             }else{
                 echo "Wrong Password!";
