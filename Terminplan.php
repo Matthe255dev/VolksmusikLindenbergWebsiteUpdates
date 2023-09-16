@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,14 +6,9 @@
     <title>Termine</title>
 </head>
 <body>
-    <!--<h1 style="">Es tut uns leid. Dieses Feature ist leider noch nicht verfügbar.</h1>!-->
-    <?php
-        require("termine.php");
-        $termine = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1")
-        echo($termine);
-    ?>
     <script>
-        //alert("Dieses Feature ist derzeit nicht verfügbar!");
+        window.open("not_available.php");
+        window.close();
     </script>
 </body>
 </html>

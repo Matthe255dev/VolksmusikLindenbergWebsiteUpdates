@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,18 +7,26 @@
 </head>
 <body>
     <script>
-        alert("Sorry, we are currently unavaliable!");
+        window.open("updating.html");
         window.close();
     </script>
-    <button onclick='window.open("login.php");window.close();'>Login</button><br>
-    <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
-    <p>aktuelle Termine:</p>
     <?php
         if(isset($_POST["submit"])){
-            //require("termine.php");
-            //$termine = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1");
-            //echo($termine);
+            require("termine.php");
+            $data = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1");
         }        
     ?>
+    <button onclick='window.open("login.php");window.close();'>Login</button><br>
+    <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
+    <table>
+        <tr>
+            <th>aktuelle Termine:</th>
+        </tr>
+        <?php foreach($data as $row): ?>
+        <tr>
+            <td><?= htmlspecialchars($row['Termine']) ?></td>
+        </tr>
+        <?php endforeach ?>
+    </table>
 </body>
 </html>
