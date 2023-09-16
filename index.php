@@ -14,10 +14,9 @@
         window.close();
     </script>
     <?php
-        if(isset($_POST["submit"])){
-            require("termine.php");
-            $data = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1");
-        }        
+        require("termine.php");
+        $result = mysqli_query("SELECT * FROM Termine WHERE Active IS 1");
+        $data = $result->fetch_all(MYSQLI_ASSOC);     
     ?>
     <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
     <table>
