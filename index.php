@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="style.css">
     <title>Volksmusik Lindenberg</title>
 </head>
+<header>
+    <button onclick='window.open("login.php");window.close();' style="display:flex;justify-self:right">Login</button><br>
+</header>
 <body>
     <script>
         window.open("updating.html");
@@ -16,7 +19,7 @@
             $data = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1");
         }        
     ?>
-    <button onclick='window.open("login.php");window.close();'>Login</button><br>
+    
     <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
     <table>
         <tr>

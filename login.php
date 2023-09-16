@@ -22,7 +22,7 @@
                 $instrument->execute();
                 session_start();                                //start the session
                 $_SESSION["username"] = $row["USERNAME"];       
-                header("Location: $instrument");
+                header("Location: /Noten/$instrument");
             }else{
                 echo "Wrong Password!";
             }
