@@ -8,12 +8,16 @@
 <body>
     <button onclick='window.open("login.php");window.close();' style="display:flex;justify-self:right;justify-content:right;">Login</button>
     <script>
-        /*window.open("updating.php");
-        window.close();
-        while(true){
-            alert("Sorry, we are currently unavailable!");
+        unavailable = true;
+        if(unavailable == true){
+            window.open("not_available.php");
             window.close();
-        }*/
+            while(true){
+                alert("Sorry, we are currently unavailable!");
+                window.close();
+            }
+        }
+        
     </script>
     <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
     <?php
