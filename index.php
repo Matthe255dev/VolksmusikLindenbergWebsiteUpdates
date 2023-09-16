@@ -15,9 +15,11 @@
     <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
     <p>aktuelle Termine:</p>
     <?php
-        //require("termine.php");
-        //$termine = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1");
-        //echo($termine);
+        if(isset($_POST["submit"])){
+            //require("termine.php");
+            //$termine = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1");
+            //echo($termine);
+        }        
     ?>
 </body>
 </html>

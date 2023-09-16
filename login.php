@@ -14,7 +14,7 @@
         $stmt->bindParam(":user", $_POST["username"]);//bind User to Text Parameter to avoid SQLInjection
         $stmt->execute();
         $rowc = $stmt->rowCount();//get User Row Count
-        if($rowc >= 0){
+        if($rowc == 1){
             $entry = $stmt->fetch();
             if(password_verify($_POST["passwd"], $row["Password"])){//check the Password
                 echo "Login erfolgreich";
@@ -24,6 +24,8 @@
                 session_start();                                //start the session
                 $_SESSION["username"] = $row["USERNAME"];       
                 header("Location: $instrument");
+            }else{
+                echo "Wrong Password!";
             }
         }else{
             echo "This User doesn't Exist!";
