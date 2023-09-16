@@ -5,10 +5,8 @@
     <link rel="stylesheet" href="style.css">
     <title>Volksmusik Lindenberg</title>
 </head>
-<header>
-    <button onclick='window.open("login.php");window.close();' style="display:flex;justify-content:right">Login</button><br>
-</header>
 <body>
+    <button onclick='window.open("login.php");window.close();' style="display:flex;justify-self:right;justify-content:right;">Login</button>
     <script>
         window.open("updating.php");
         window.close();
