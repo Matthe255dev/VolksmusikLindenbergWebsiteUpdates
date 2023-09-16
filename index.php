@@ -6,11 +6,11 @@
     <title>Volksmusik Lindenberg</title>
 </head>
 <header>
-    <button onclick='window.open("login.php");window.close();' style="display:flex;justify-self:right">Login</button><br>
+    <button onclick='window.open("login.php");window.close();' style="display:flex;justify-content:right">Login</button><br>
 </header>
 <body>
     <script>
-        window.open("updating.html");
+        window.open("updating.php");
         window.close();
     </script>
     <?php
@@ -19,7 +19,6 @@
             $data = $termine->prepare("SELECT * FROM 'Termine' WHERE Active = 1");
         }        
     ?>
-    
     <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
     <table>
         <tr>
@@ -31,5 +30,8 @@
         </tr>
         <?php endforeach ?>
     </table>
+    <form action="index.php" method="POST">
+        <button class="btn-login" type="submit" name="submit">neueste Termine</button>
+    </form>
 </body>
 </html>
