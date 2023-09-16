@@ -30,7 +30,7 @@
         </tr>
         <?php endforeach ?>
     </table>
-    <form action="index.php" method="POST">
+    <form method="POST">
         <button class="btn-login" type="submit" name="submit">neueste Termine</button>
     </form>
 </body>
