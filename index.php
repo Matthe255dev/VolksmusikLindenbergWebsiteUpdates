@@ -17,7 +17,7 @@
     </script>
     <?php
         $con = mysqli_connect("localhost","Website","1c101d7135024ccf9358366ce2d45fd69aedd23c573f961124c0d0346992edf8","Volksmusik_Termine");
-        $result = mysqli_query($con,"SELECT * FROM Termine WHERE Active IS 1");
+        $result = mysqli_query($con,"SELECT * FROM Termine WHERE Active=1");
         $data = $result->fetch_all(MYSQLI_ASSOC);     
     ?>
     <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
