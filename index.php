@@ -15,21 +15,19 @@
             window.close();
         }*/
     </script>
+    <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
     <?php
         $con = mysqli_connect("localhost","Website","1c101d7135024ccf9358366ce2d45fd69aedd23c573f961124c0d0346992edf8","Volksmusik_Termine");
         $result = mysqli_query($con,"SELECT * FROM Termine WHERE Active=1");
-        $data = $result->fetch_all(MYSQLI_ASSOC);     
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+        while ($row = mysqli_fetch_row($result)) {
+            echo "<tr>";
+            foreach ($row as $item) {
+                echo '<td>' . htmlspecialchars($item) . '</td>'; //get items 
+            }
+            echo '</tr>';
+        }
+        echo "</table>";
     ?>
-    <button onclick='window.open("Terminplan.php");window.close();'>Termine</button>
-    <table>
-        <tr>
-            <th>aktuelle Termine:</th>
-        </tr>
-        <?php foreach($data as $row): ?>
-        <tr>
-            <td><?= htmlspecialchars($row['Termine']) ?></td>
-        </tr>
-        <?php endforeach ?>
-    </table>
 </body>
 </html>
